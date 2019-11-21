@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminLayout.master.cs" Inherits="CarPoint.com.Admin.AdminLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        .navbar{
+            background: #09A520;
+            height: 60px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="left: 0; right: 0; top: 0; height: 90px">
+       <div class="container">                  
+                <div class="navbar-header">  
+                    <div style="margin-right:25px;">
+                           <a class="navbar-brand" runat="server" href="~/">
+                               <asp:Image ID="Image1" ImageUrl="~/Images/Photo/Logo.jpg" Height="50px" Width="60px" runat="server" />
+                            &nbsp;<b style="color:darkgreen">CarPoint.com</b></a>
+                    </div>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">                        
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <%--<span class="icon-bar"></span>--%>
+                    </button>
+                    </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li style="margin-top:35px; padding-left:10px;"><a runat="server" href="Admin.aspx">Admin Home</a></li>                   
+                       <li style="margin-top:35px; padding-left:10px;"><a runat="server" href="Reports.aspx">Report</a></li>                                      
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                       <li class="active"><a  style="height:35px; border:0px; padding:0px; width:0px; margin-top:25px;" href="/LoginPage.aspx">
+                           <asp:Button ID="btnLog" runat="server" Text="Logout" BackColor="#000000" ForeColor="#ffffff" OnClick="btnLog_Click"/><%--<span class="sr-only">(current)</span>--%></a>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">             
+            </asp:ContentPlaceHolder>
+        <br />
+         <footer>
+               <hr />
+                <p>&copy; <%: DateTime.Now.Year %> - Admin Panel</p>
+         </footer>
+    </form>
+</body>
+</html>
